@@ -11,5 +11,5 @@ echo "==="$1"==="
         --print_res_csv_file=true \
         --print_log_file=false
 
-mkdir -p ./tmp/csv
-mv *.csv ./tmp/csv
+mkdir -p ./artifacts/csv
+mv *.csv ./artifacts/csv

@@ -5,6 +5,7 @@
 cd docker
 bash build.sh
 bash run.sh
+cd ws && conda activate maestro-env
 ```
 ## Generate different dataflows (ws, os, nlr) of 2D PE array
 ```

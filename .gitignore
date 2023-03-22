@@ -46,6 +46,6 @@ maestro
 
 *.pyc
 
-tmp
+artifacts
 data/mapping
 *.log

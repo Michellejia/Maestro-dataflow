@@ -46,14 +46,13 @@ class CNNDataflowGenerator(CNNDataflowSpec):
         tp_inner_dims = [x for x in self.cnn_dimensions if x not in dimensions and x not in spatial_dims]
         for dim in tp_inner_dims:
             dataflow_str += self.temporal + self.directives_dimension_map[dim]
-        print(dataflow_str)
         return dataflow_str
 
 
     def _generate_files(self, stationary):
         parallel_dims = self.spdim_dataflow_map[stationary]
 
-        path = "./tmp/"
+        path = "./artifacts/"
         isExist = os.path.exists(path)
         if not isExist: os.makedirs(path)
 
@@ -80,16 +79,16 @@ class CNNDataflowGenerator(CNNDataflowSpec):
                 print("cmd not work")
     
     def get_runtime_stats(self):
-        path = "./tmp/csv/"
+        path = "./artifacts/csv/"
         arr = os.listdir(path)
+        # print(arr)
         
         runtime_stats = defaultdict(list)
         for name in arr:
             df = pd.read_csv(path + name)
             runtime_stats[name].append(df[' Runtime (Cycles)'].tolist())
         
-        for k, v in runtime_stats.items():
-            print(k, v)
+        return runtime_stats
 
 
 if __name__ == "__main__":
@@ -99,4 +98,7 @@ if __name__ == "__main__":
     for type in stationary_types:
         print(type)
         generator.run_cmds(type)
-        generator.get_runtime_stats()
+        stats = generator.get_runtime_stats()
+
+    for k, v in stats.items():
+        print(k, v)

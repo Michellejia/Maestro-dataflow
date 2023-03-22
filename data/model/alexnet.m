@@ -22,7 +22,7 @@ Dimensions { K: 256, C: 384, R: 3, S: 3, Y: 13, X: 13 }
 Layer Conv2d-5 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 256, C: 256, R: 3, S: 3, Y: 13, X: 13 }1
+Dimensions { K: 256, C: 256, R: 3, S: 3, Y: 13, X: 13 }
 }
 Layer Linear-6 {
 Type: CONV
