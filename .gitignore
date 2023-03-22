@@ -45,3 +45,7 @@ maestro
 .DS_Store
 
 *.pyc
+
+tmp
+data/mapping
+*.log
