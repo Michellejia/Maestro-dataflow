@@ -43,6 +43,7 @@ if args.mapping_file is not None:
         subprocess.run(sim_command,shell=True)
         target_csv_path = hardware.replace(".m",".csv")
         target_csv_path = target_csv_path.replace("data/hw/","artifacts/run_results")
-        move_command = f"mkdir -p ./artifacts/run_results && mv out.csv {target_csv_path}"
+        generated_csv_filename = args.mapping_file.split("/")[-1].replace(".m",".csv")
+        move_command = f"mkdir -p ./artifacts/run_results && mv {generated_csv_filename} {target_csv_path}"
         subprocess.run(move_command,shell=True)
 
