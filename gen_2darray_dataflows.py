@@ -19,8 +19,8 @@ class CNNDataflowSpec:
         "S": "(Sz(S),Sz(S)) S;\n",
     }
     spdim_dataflow_map = {
-        "ws": ["KC", "KR", "CK", "CR"],
-        "os": ["KY", "YK"],
+        "ws": ["KC", "KR", "CK", "CR", "RS", "SR"],
+        "os": ["KY", "YK", "XY"],
         "nlr": ["KC", "CK"]
     }
 
@@ -39,7 +39,7 @@ class CNNDataflowGenerator(CNNDataflowSpec):
         elif stationary == "os":
             dimensions = self.output_dimensions
         elif stationary == "nlr":
-            dimensions = []
+            dimensions = self.cnn_dimensions
         else:
             print("Stationary type not supported ")
         
