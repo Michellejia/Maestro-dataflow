@@ -13,6 +13,7 @@ if __name__ == "__main__":
     base_path = '../../data/'
     if os.path.exists(base_path + 'model/' + opt.model_file):
         with open('../../artifacts/' + opt.dataflow_file + ".m" ,"r") as fd:
+        # with open('./dataflow/' + opt.dataflow_file + ".m" ,"r") as fd:
                 with open(base_path + 'mapping/' + opt.outfile, "w") as fo:
                     with open(base_path + 'model/' + opt.model_file, "r") as fm:
                         for line in fm:
