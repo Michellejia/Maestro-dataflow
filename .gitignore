@@ -48,3 +48,6 @@ maestro
 
 data/mapping
 *.log
+
+# generated hardware file
+data/hw/accelerator_p*
